@@ -1,20 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var Acts = sequelize.define("Acts", {
+    actTitle: DataTypes.STRING,
     actText: DataTypes.TEXT,
-    nextScene: DataTypes.INTEGER,
-    wrongChoiceText: DataTypes.TEXT
+    nextAct: DataTypes.INTEGER,
+    correctChoie: DataTypes.BOOLEAN,
+    wrongChoiceText: DataTypes.STRING,
+    imgUrl: DataTypes.STRING
   });
 
-  var Images = sequelize.define("Images", {
-    imgUrl: DataTypes.STRING,
-    act: DataTypes.INTEGER
-  });
-
-  var Users = sequelize.define("Users", {
-    userName: DataTypes.STRING,
-    userPassword: DataTypes.STRING,
-    currentAct: DataTypes.INTEGER
-  });
-
-  return Acts, Images, Users;
+  return Acts;
 };
